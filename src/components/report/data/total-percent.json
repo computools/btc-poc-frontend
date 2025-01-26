@@ -1,0 +1,9 @@
+[
+  { "label": "Energy", "value": 35 },
+  { "label": "Financial", "value": 14 },
+  { "label": "Utilities", "value": 14 },
+  { "label": "Mining", "value": 14 },
+  { "label": "Transportation", "value": 8 },
+  { "label": "Telecommunication", "value": 7 },
+  { "label": "Others", "value": 8 }
+]

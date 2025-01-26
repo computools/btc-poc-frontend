@@ -1,0 +1,11 @@
+[
+	{ "label": "BPC", "liquid": 6, "current": -0.2, "net_liquid": 1},
+	{ "label": "WUC", "liquid": 4, "current": -0.1, "net_liquid": 0},
+	{ "label": "BSB", "liquid": 1.5, "current": 0, "net_liquid": 4},
+	{ "label": "BHC", "liquid": 0.75, "current": 0, "net_liquid":  6.5},
+	{ "label": "BTCL", "liquid": 0.5, "current": 0.1, "net_liquid": 4.5},
+	{ "label": "NDB", "liquid": 0.5, "current": -0.1, "net_liquid": 3.5},
+	{ "label": "BPS", "liquid": 0.5, "current": 0.1, "net_liquid": 5},
+	{ "label": "BOCRA", "liquid": 0.25, "current": 0, "net_liquid": 5.5},
+	{ "label": "BOL", "liquid": 0.2, "current": 0, "net_liquid": 3}
+]
