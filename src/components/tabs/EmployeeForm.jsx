@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns";
 import { schemaEmployeeForm } from "@/lib/schemas.js";
 
-export function EmployeeForm({ position }) {
+export function EmployeeForm({ position, readOnly }) {
   const form = useForm({
     resolver: zodResolver(schemaEmployeeForm),
     defaultValues: {
@@ -33,18 +33,20 @@ export function EmployeeForm({ position }) {
 
   return (
     <Dialog>
-      <div className="relative group overflow-hidden rounded-lg shadow-lg flex items-center justify-center">
-        <DialogTrigger asChild>
-          <div className="absolute top-0 flex justify-center w-full p-2">
-            <Plus className="bg-green-600 rounded-full text-white cursor-pointer hover:bg-green-700 transition-colors" />
+      <DialogTrigger asChild>
+        <div className="relative group overflow-hidden w-[166px] h-[260px] shadow-[rgba(50,50,93,0.25)_0px_2px_6px_-1px,_rgba(0,0,0,0.3)_0px_1px_3px_-1px] flex items-center justify-center cursor-pointer">
+          { !readOnly &&
+            <div className="absolute top-0 flex justify-center w-full p-2">
+              <Plus
+                className="bg-green-600 rounded-full text-white cursor-pointer hover:bg-green-700 transition-colors"/>
+            </div>
+          }
+          <span className="text-md text-red-600 mb-14">VACANT</span>
+          <div className="flex absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white py-4 px-3 h-[30%]">
+            <p className="font-bold font-[sans-serif] text-[11px] self-end opacity-95">{ position }</p>
           </div>
-        </DialogTrigger>
-        <span className="text-md text-red-600 mb-14">VACANT</span>
-        <div
-            className="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white p-4 h-[35%]">
-          <p className="font-semibold text-xs">{ position }</p>
         </div>
-      </div>
+      </DialogTrigger>
 
       <DialogContent className="px-0">
         <DialogHeader>
@@ -188,9 +190,11 @@ export function EmployeeForm({ position }) {
                   />
                 </div>
               </div>
-              <DialogFooter>
-                <Button type="submit" className='mt-4 px-8'>Submit</Button>
-              </DialogFooter>
+              { !readOnly &&
+                  <DialogFooter>
+                    <Button type="submit" className='mt-4 px-8'>Submit</Button>
+                  </DialogFooter>
+              }
             </form>
           </Form>
         </div>

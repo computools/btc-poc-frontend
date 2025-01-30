@@ -60,11 +60,13 @@ export const reportFieldName = {
   year: "year",
   company_id: "company_id",
   url: "url",
+  preview_url: "preview_url",
 }
 
 export const reportSchema = z.object({
   name:z.string().min(1,"Name is required"),
   year:z.number().min(1,"Year is required"),
   company_id:z.number().min(1,"Company id is required"),
-  url:z.string().min(1,"URL is required")
+  url:z.string().min(1,"URL is required"),
+  preview_url:z.string().min(1,"Preview URL is required")
 })

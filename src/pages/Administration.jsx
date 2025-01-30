@@ -12,9 +12,11 @@ export const Administration = () => {
         <CompanyForm/>
 
         <TabsMenu
-          boardComponent={ <EmployeesList readOnly={ false }/> }
-          perfomanceComponent={ <PerformanceAdmin/> }
-          financialComponent={<FinancialContent readOnly={false}/>}
+            tabs={[
+                { label: "BOARD", value: "board", content: <EmployeesList readOnly={ false } /> },
+                { label: "PERFORMANCE", value: "performance", content: <PerformanceAdmin/> },
+                { label: "FINANCIAL", value: "financial", content: <FinancialContent readOnly={false}/> }
+            ]}
         />
       </div>
     </div>

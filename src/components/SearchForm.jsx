@@ -26,138 +26,136 @@ const SearchForm = forwardRef(({ onSubmit }, ref) => {
   });
 
   return (
-    <form ref={ ref } onSubmit={ handleSubmit(onSubmit) } className="flex flex-col py-4">
-      <div className="flex w-full space-x-4">
-        <div className="flex flex-col w-3/5 text-sm ">
-          <div className='flex w-full items-center'>
-            <label>Name:</label>
-            <Controller
-              name="name"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="Name" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+      <form ref={ref} onSubmit={handleSubmit(onSubmit)} className="flex flex-col pt-4">
+        <div className="flex w-full gap-4">
+          <div className="flex flex-col w-3/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-20 font-[sans-serif] text-gray-700 text-center">Name</label>
+              <Controller
+                  name="name"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="Name" className="flex-1 h-fitmt-1 font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.name && <span className="text-red-500 text-xs">{errors.name.message}</span>}
           </div>
-          { errors.name && <span className="text-red-500 text-xs">{ errors.name.message }</span> }
-        </div>
-        <div className="flex w-1/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>Short Name:</label>
-            <Controller
-              name="short_name"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="Short Name" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+          <div className="flex flex-col w-1/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-12 font-[sans-serif] text-gray-700 text-center ">Short Name</label>
+              <Controller
+                  name="short_name"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="Short Name" className="flex-1 h-fitmt-1 text-center font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.short_name && <span className="text-red-500 text-xs">{errors.short_name.message}</span>}
           </div>
-          { errors.short_name && <span className="text-red-500 text-xs">{ errors.short_name.message }</span> }
-        </div>
-        <div className="flex w-1/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>ID:</label>
-            <Controller
-              name="public_id"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="ID" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+          <div className="flex flex-col w-1/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-12 font-[sans-serif] text-gray-700 text-center">ID</label>
+              <Controller
+                  name="public_id"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="ID" className="flex-1 h-fitmt-1 text-center font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.public_id && <span className="text-red-500 text-xs">{errors.public_id.message}</span>}
           </div>
-          { errors.public_id && <span className="text-red-500 text-xs">{ errors.public_id.message }</span> }
         </div>
-      </div>
 
-      <span className="text-sm mt-4">Address</span>
-      <hr className="border-gray-400"/>
+        <span className="text-md font-bold text-gray-500 mt-4 font-[sans-serif]">Address</span>
+        <hr className="border-gray-400 my-1"/>
 
-      <div className="flex w-full space-x-4 mt-2">
-        <div className="flex w-3/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>Physical:</label>
-            <Controller
-              name="physical_address"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="Physical" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+        <div className="flex w-full gap-4">
+          <div className="flex flex-col w-3/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-20 font-[sans-serif] text-gray-700 text-center">Physical</label>
+              <Controller
+                  name="physical_address"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="Physical" className="flex-1 h-fitmt-1 font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.physical_address && <span className="text-red-500 text-xs">{errors.physical_address.message}</span>}
           </div>
-          { errors.physical_address &&
-            <span className="text-red-500 text-xs">{ errors.physical_address.message }</span> }
-        </div>
-        <div className="flex w-1/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>City:</label>
-            <Controller
-              name="physical_city"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="City" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+          <div className="flex flex-col w-1/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-12 font-[sans-serif] text-gray-700 text-center">City</label>
+              <Controller
+                  name="physical_city"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="City" className="flex-1 h-fitmt-1 text-center font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.physical_city && <span className="text-red-500 text-xs">{errors.physical_city.message}</span>}
           </div>
-          { errors.physical_city && <span className="text-red-500 text-xs">{ errors.physical_city.message }</span> }
-        </div>
-        <div className="flex w-1/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>Code:</label>
-            <Controller
-              name="physical_zip"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="Code" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+          <div className="flex flex-col w-1/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-12 font-[sans-serif] text-gray-700 text-center">Code</label>
+              <Controller
+                  name="physical_zip"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="Code" className="flex-1 h-fitmt-1 text-center font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.physical_zip && <span className="text-red-500 text-xs">{errors.physical_zip.message}</span>}
           </div>
-          { errors.physical_zip && <span className="text-red-500 text-xs">{ errors.physical_zip.message }</span> }
         </div>
-      </div>
 
-      <div className="flex w-full space-x-4 mt-2">
-        <div className="flex w-3/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>Postal:</label>
-            <Controller
-              name="postal_address"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="Postal" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+        <div className="flex w-full gap-4 mt-2">
+          <div className="flex flex-col w-3/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-20 font-[sans-serif] text-gray-700 text-center">Postal</label>
+              <Controller
+                  name="postal_address"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="Postal" className="flex-1 h-fitmt-1 font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.postal_address && <span className="text-red-500 text-xs">{errors.postal_address.message}</span>}
           </div>
-          { errors.postal_address &&
-            <span className="text-red-500 text-xs">{ errors.postal_address.message }</span> }
-        </div>
-        <div className="flex w-1/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>City:</label>
-            <Controller
-              name="postal_city"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="City" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+          <div className="flex flex-col w-1/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-12 font-[sans-serif] text-gray-700 text-center">City</label>
+              <Controller
+                  name="postal_city"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="City" className="flex-1 h-fitmt-1 text-center font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.postal_city && <span className="text-red-500 text-xs">{errors.postal_city.message}</span>}
           </div>
-          { errors.postal_city && <span className="text-red-500 text-xs">{ errors.postal_city.message }</span> }
-        </div>
-        <div className="flex w-1/5 text-sm flex-col">
-          <div className='flex w-full items-center'>
-            <label>Code:</label>
-            <Controller
-              name="postal_zip"
-              control={ control }
-              render={ ({ field }) => (
-                <Input placeholder="Code" className="w-full mt-1 ml-2" { ...field } />
-              ) }
-            />
+          <div className="flex flex-col w-1/5 text-sm">
+            <div className='flex w-full items-center gap-2'>
+              <label className="w-12 font-[sans-serif] text-gray-700 text-center">Code</label>
+              <Controller
+                  name="postal_zip"
+                  control={control}
+                  render={({ field }) => (
+                      <Input placeholder="Code" className="flex-1 h-fit mt-1 text-center font-[sans-serif] font-medium text-gray-600" {...field} />
+                  )}
+              />
+            </div>
+            {errors.postal_zip && <span className="text-red-500 text-xs">{errors.postal_zip.message}</span>}
           </div>
-          { errors.postal_zip && <span className="text-red-500 text-xs">{ errors.postal_zip.message }</span> }
         </div>
-      </div>
-    </form>
+      </form>
   );
 })
 export default SearchForm;

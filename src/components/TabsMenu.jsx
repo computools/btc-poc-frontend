@@ -1,30 +1,28 @@
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export function TabsMenu({ boardComponent, perfomanceComponent, financialComponent }) {
+export function TabsMenu({ tabs }) {
   return (
-    <div className="w-full mx-auto mt-5">
-      <Tabs defaultValue="board">
+    <div className="w-full mx-auto">
+      <Tabs defaultValue={ tabs[0].value }>
         <TabsList className="flex justify-start p-0 bg-main border-b-2 rounded-none">
-          <TabsTrigger value="board"
-                       className="active:border rounded-t-md px-8 active:bg-white shadow-none mb-[-5px]">BOARD</TabsTrigger>
-          <TabsTrigger value="performance"
-                       className="active:border rounded-t-md px-8 active:bg-white shadow-none mb-[-5px]">PERFORMANCE</TabsTrigger>
-          <TabsTrigger value="financial"
-                       className="active:border rounded-t-md px-8 active:bg-white shadow-none mb-[-5px]">FINANCIAL</TabsTrigger>
+          { tabs.map(({ label, value, disabled = false }) => (
+              <TabsTrigger
+                  key={ value }
+                  value={ value }
+                  disabled={ disabled }
+                  className="active:border rounded-t-md px-8 active:bg-white mb-[-5px]"
+              >
+                { label }
+              </TabsTrigger>
+          ))}
         </TabsList>
 
-        <TabsContent value="board">
-          { boardComponent }
-        </TabsContent>
-
-        <TabsContent value="performance">
-          { perfomanceComponent }
-        </TabsContent>
-
-        <TabsContent value="financial">
-          { financialComponent }
-        </TabsContent>
+        { tabs.map(({ value, content }) => (
+            <TabsContent key={ value } value={ value }>
+              { content }
+            </TabsContent>
+        ))}
       </Tabs>
     </div>
   );

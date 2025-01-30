@@ -43,12 +43,12 @@ export const PerformanceForm = () => {
                         name={field}
                         render={({ field }) => (
                             <FormItem className="flex items-center w-[370px] justify-between">
-                                <label>{field.name
+                                <label className="font-[sans-serif] text-[14px]">{field.name
                                         .replace(/([A-Z])/g, " $1")
                                         .replace(/^./, (char) => char.toUpperCase())}
                                 </label>
                                 <FormControl>
-                                    <Input className="w-[170px] text-end" placeholder={`Enter ${field.name}`}{...field}/>
+                                    <Input className="w-[170px] text-end font-[sans-serif] text-gray-700" placeholder={`Enter ${field.name}`}{...field}/>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

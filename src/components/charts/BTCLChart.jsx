@@ -44,7 +44,7 @@ export function BTCLChart() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto h-80">
       <Bar data={ data } options={ options }/>
     </div>
   )

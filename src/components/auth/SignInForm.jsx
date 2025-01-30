@@ -45,7 +45,7 @@ export const SignInForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <FormLabel className="text-base text-gray-700 block !text-center">
+        <FormLabel className="text-gray-700 block text-xl !text-center font-[sans-serif] font-semibold">
           Sign into your account
         </FormLabel>
         {error && (
@@ -59,7 +59,7 @@ export const SignInForm = () => {
           render={({ field }) => (
             <FormItem className="!mt-6">
               <FormControl>
-                <Input placeholder="Email Adress" {...field}/>
+                <Input className="font-medium font-[sans-serif]" placeholder="Email Adress" {...field}/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -71,26 +71,26 @@ export const SignInForm = () => {
           render={({ field }) => (
             <FormItem className="!mt-6">
               <FormControl>
-                <Input type="password" placeholder="Password" {...field} />
+                <Input className="font-medium font-[sans-serif]" type="password" placeholder="Password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full !mt-6">
+        <Button type="submit" className="w-full !mt-6 text-sm !py-3 h-fit shadow-md">
           Login
         </Button>
       </form>
-      <FormLabel className="text-xs text-gray-500 block text-center mt-6">
+      <FormLabel className="text-sm font-[sans-serif] text-gray-500 block text-center mt-6">
         Forgot Password?
       </FormLabel>
       <Link
         to="/sign-up"
-        className="text-sm text-gray-700 block text-center mt-1 visited:text-purple-900"
+        className="text-md text-indigo-800 block text-center mt-1 font-[sans-serif]"
       >
         Don't have an account? Register here
       </Link>
-      <FormLabel className="text-xs text-gray-500 block text-center my-10">
+      <FormLabel className="text-sm font-[sans-serif] text-gray-500 block text-center my-10">
         Terms of use. Privacy policy
       </FormLabel>
     </Form>

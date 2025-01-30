@@ -15,6 +15,7 @@ export default function SearchComponent() {
           placeholder="Search..."
           value=''
           className="pl-10 w-full"
+          onChange={()=>{}}
         />
       </div>
     </div>

@@ -66,7 +66,7 @@ export function ReturnsChart() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto h-80">
       <Line data={ data } options={ options }/>
     </div>
   )

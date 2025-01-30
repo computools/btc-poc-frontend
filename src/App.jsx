@@ -5,6 +5,7 @@ import { Reports } from "@/pages/Reports";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Administration } from "@/pages/Administration.jsx";
 import { routes } from "@/lib/routes";
+import {DashboardInfo} from "@/pages/DashboardInfo.jsx";
 
 export default function App() {
   return (
@@ -16,13 +17,18 @@ export default function App() {
             <Dashboard/>
           </ProtectedRoute>
         }/>
+        <Route path={routes.DASHBOARDS_INFO} element={
+            <ProtectedRoute>
+                <DashboardInfo/>
+            </ProtectedRoute>
+        }/>
         <Route path={routes.REPORTS} element={
-          <ProtectedRoute>
+          <ProtectedRoute disable={true}>
               <Reports/>
           </ProtectedRoute>
         }/>
         <Route path={routes.ADMINISTRATION} element={
-          <ProtectedRoute>
+          <ProtectedRoute strong={true}>
             <Administration/>
           </ProtectedRoute>
         }/>

@@ -6,7 +6,7 @@
 - npm (Node Package Manager)
 
 ### Set environment variables
-- `cp .env.example .env`
+- `cp example.env .env`
 - set your variables
 
 ### Installation & Running

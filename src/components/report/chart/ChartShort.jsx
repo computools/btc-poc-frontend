@@ -7,8 +7,8 @@ export const ChartShort = ({ data }) => {
       {
         label: "Values",
         data: data.map(({ value }) => value),
-        backgroundColor: "rgba(0, 143, 255, 1)",
-        borderColor: "rgba(0, 143, 255, 1)",
+        backgroundColor: "#578bae",
+        borderColor: "#578bae",
         borderWidth: 1,
       },
     ],

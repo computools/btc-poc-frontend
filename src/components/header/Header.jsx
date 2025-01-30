@@ -13,11 +13,11 @@ export const Header = () => {
         <div className="border-l-2 border-light-blue mb-2 flex justify-between items-center flex-wrap md:flex-nowrap">
           <div className="flex justify-between items-center mx-auto lg:mx-0">
             <Image src={Blazon} className="h-16 w-24"/>
-            <Image src={Logo} className="h-20 w-28"/>
+            <Image src={Logo} className="h-20 w-30 ml-10"/>
           </div>
-          <h1 className="text-lg lg:text-3xl mx-auto text-red-800 max-w-4xl text-center">
+          <h1 className="text-lg lg:text-3xl mx-auto text-red-900 max-w-4xl text-center font-medium font-sans">
             Corporate Governance And Performance Monitoring System 
-            <span className="font-medium"> CGAPMC</span>
+            <span className="font-semibold font-serif"> CGAPMIS</span>
           </h1>
         </div>
         <hr />
